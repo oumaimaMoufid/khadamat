@@ -33,16 +33,16 @@
             />
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/profesId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="Are you a professional? Click here"
-        android:textColor="#FF9800"
         android:fontFamily="@font/roboto_bolditalic"
-        android:textSize="20dp"
-        />
+        android:text="Are you a professional ? Please complete your information"
+        android:textColor="#FF9800"
+        android:textSize="20dp" />
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

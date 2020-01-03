@@ -23,6 +23,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.khadamat.Model.Users;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -94,27 +95,6 @@ public class register extends AppCompatActivity {
             }
         });
 
-//        mButtonUpload.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                uploadFile();
-//
-//            }
-//        });
-
-
-//    private void uploadFile() {
-//    }
-
-//    private void openFileChooser(){
-//            Intent intent = new Intent();
-//            intent.setType("image/*");
-//            intent.setAction(Intent.ACTION_GET_CONTENT);
-//            startActivityForResult(intent, PICK_IMAGE_REQUEST);
-//
-//        }
-          ///finish
-
 
           registerButton = (Button) findViewById(R.id.register);
 
@@ -134,7 +114,7 @@ public class register extends AppCompatActivity {
           registerButton.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-                  uploadFile();
+
                   createAccount();
 
 
@@ -168,26 +148,50 @@ public class register extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadFile() {
+    private void uploadFile(final String phone) {
         if (mImageUri != null){
-            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+
+            final StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+
                     "." + getFileExtension(mImageUri));
 
             fileReference.putFile(mImageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
+                            //progressDialog.dismiss();
+                            //statusImageCallback.onSuccess("images/"+user.getUid()+"/" + UUID.randomUUID().toString());
+                            Log.v("getDownloadUrl",  fileReference.getDownloadUrl().toString());
+
+                            //final StorageReference refs = ref.child("images/mountains.jpg");
+                            UploadTask uploadTask = fileReference.putFile(mImageUri);
+
+                            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                                 @Override
-                                public void run() {
-                                    mProgressBar.setProgress(0);
+                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                                    if (!task.isSuccessful()) {
+                                        throw task.getException();
+                                    }
+
+                                    // Continue with the task to get the download URL
+                                    Log.v("getDownloadUrl",  fileReference.getDownloadUrl().toString());
+                                    return fileReference.getDownloadUrl();
+
                                 }
-                            }, 8000);
-                            Toast.makeText(register.this, "uploas successful", Toast.LENGTH_SHORT).show();
-                            Users users = new Users(taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
-                            String uploadId = mDatabaseRef.push().getKey();
-                            mDatabaseRef.child(uploadId).setValue(users);
+                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    if (task.isSuccessful()) {
+                                        Uri downloadUri = task.getResult();
+                                        Toast.makeText(register.this, "uploas successful", Toast.LENGTH_SHORT).show();
+
+                                        HashMap<String, Object> users = new HashMap<>();
+                                        users.put("image_url", downloadUri.toString());
+                                        mDatabaseRef.child(phone).updateChildren(users);
+                                    }
+                                }
+                            });
+
+
+                            //Toast.makeText(AddProduct.this, "Uploaded", Toast.LENGTH_SHORT).show();
                         }
 
                     })
@@ -310,6 +314,7 @@ public class register extends AppCompatActivity {
 
                                     if (task.isSuccessful())
                                     {
+                                        uploadFile(phone);
                                         Toast.makeText(register.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
                                         //send user to login activity
