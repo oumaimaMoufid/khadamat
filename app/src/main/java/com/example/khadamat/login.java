@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.khadamat.Model.Users;
@@ -24,7 +25,11 @@ public class login extends AppCompatActivity {
     private Button LoginButton;
     private EditText InputPhoneNum,InputPassword;
     private ProgressDialog loadingBar;
-    private final  String parentDbName = "Users";
+    //final ==>no
+    private String parentDbName = "Users";
+
+    private TextView AdminLink,NotAdminLink;
+
 
 
 
@@ -37,6 +42,9 @@ public class login extends AppCompatActivity {
         LoginButton = (Button) findViewById(R.id.sign);
         InputPhoneNum = (EditText) findViewById(R.id.tel);
         InputPassword = (EditText) findViewById(R.id.password);
+        AdminLink = findViewById(R.id.admin);
+        NotAdminLink = findViewById(R.id.notadmin);
+
         loadingBar =new ProgressDialog(this);
 
 
@@ -47,7 +55,29 @@ public class login extends AppCompatActivity {
             }
         });
 
+        AdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginButton.setText("Login Admin");
+                AdminLink.setVisibility(View.INVISIBLE);
+                NotAdminLink.setVisibility(View.VISIBLE);
+                parentDbName="Admins";
+
+            }
+        });
+        NotAdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginButton.setText("Sign Up");
+                AdminLink.setVisibility(View.VISIBLE);
+                NotAdminLink.setVisibility(View.INVISIBLE);
+                parentDbName="Users";
+            }
+        });
     }
+
+
+
     private void LoginUser(){
 
         String phone = InputPhoneNum.getText().toString();
@@ -90,13 +120,25 @@ public class login extends AppCompatActivity {
                     {
                         if (usersDate.getPassword().equals(password))
                         {
-                            Toast.makeText(login.this, "Logged in Successfully...", Toast.LENGTH_SHORT).show();
-                            loadingBar.dismiss();
-                            Intent intent = new Intent(login.this,home.class);
-                            Prevalent.currentOnlineUser = usersDate;
-                            // intent.putExtra("phone", usersDate.getPhone());
-                           Log.v("phone: ",usersDate.getPhone());
-                            startActivity(intent);
+                            if(parentDbName.equals("Admins")){
+                                Toast.makeText(login.this, "Logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+                                Intent intent = new Intent(login.this,AdminHome.class);
+                                Prevalent.currentOnlineUser = usersDate;
+                                // intent.putExtra("phone", usersDate.getPhone());
+                                Log.v("phone: ",usersDate.getPhone());
+                                startActivity(intent);
+                            }
+                            else if(parentDbName.equals("Users")){
+                                Toast.makeText(login.this, "Logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+                                Intent intent = new Intent(login.this,categories.class);
+                                Prevalent.currentOnlineUser = usersDate;
+                                // intent.putExtra("phone", usersDate.getPhone());
+                                Log.v("phone: ",usersDate.getPhone());
+                                startActivity(intent);
+                            }
+
                         }
                         else
                         {

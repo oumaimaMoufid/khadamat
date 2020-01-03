@@ -25,6 +25,17 @@
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             />
+        <TextView
+            android:fontFamily="@font/roboto_bolditalic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find Professionals"
+            android:layout_below="@+id/textGrid"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:layout_marginStart="123dp"
+            />
     </RelativeLayout>
 
     <GridLayout
