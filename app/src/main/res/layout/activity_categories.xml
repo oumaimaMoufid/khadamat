@@ -118,50 +118,34 @@
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="20"
+                                android:text="choose"
                                 android:textColor="#6A90B5"
                                 android:textSize="20sp"
                                 android:fontFamily="@font/roboto_bold"
                                 />
-                            <TextView
-                                android:layout_gravity="center"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Minute"
-                                android:textColor="#Df6A90B5"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/roboto_regular"
-                                />
+
                         </LinearLayout>
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/split"
-                            android:layout_marginLeft="16dp"
+                            android:layout_marginLeft="12dp"
                             />
                         <LinearLayout
                             android:orientation="vertical"
-                            android:layout_marginLeft="16dp"
+                            android:layout_marginLeft="13dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="15"
+                                android:text="Professional"
                                 android:textColor="#6A90B5"
                                 android:textSize="20sp"
                                 android:fontFamily="@font/roboto_bold"
                                 />
-                            <TextView
-                                android:layout_gravity="center"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Minute"
-                                android:textColor="#Df6A90B5"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/roboto_regular"
-                                />
+
                         </LinearLayout>
 
 
@@ -192,51 +176,7 @@
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
               
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/like"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 Likes"
-                        android:fontFamily="@font/roboto_regular"
-                        android:layout_marginLeft="5dp"
-
-
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginLeft="-50dp"
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/comment"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="40 Comments"
-                        android:fontFamily="@font/roboto_regular"
-                        android:layout_marginLeft="5dp"
-
-
-                        />
-
-                </LinearLayout>
 
             </LinearLayout>
 

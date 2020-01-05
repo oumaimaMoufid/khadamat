@@ -75,7 +75,7 @@ public class profile extends AppCompatActivity {
                         Toast.makeText(profile.this, "333333333333333333", Toast.LENGTH_SHORT).show();
                         //Users users = ds.child("Users").child(Prevalent.currentOnlineUser.getPhone()).getValue(Users.class);
                         nameText.setText(Prevalent.currentOnlineUser.getName());
-                        lastnameText.setText(Prevalent.currentOnlineUser.getLastname());
+                        //lastnameText.setText(Prevalent.currentOnlineUser.getLastname());
                         emailText.setText(Prevalent.currentOnlineUser.getMail());
                         telText.setText(Prevalent.currentOnlineUser.getPhone());
                         adrText.setText(Prevalent.currentOnlineUser.getAddress());

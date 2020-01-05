@@ -3,13 +3,13 @@ package com.example.khadamat.Model;
 public class Users {
 
     private String name;
-    private String lastname;
+    //private String lastname;
     private String mail;
     private String password;
     private String phone;
     private String address;
     private String city;
-    private String ImageUrl;
+    private String image_url;
 
 
     public Users(){
@@ -17,15 +17,15 @@ public class Users {
     }
 
     public String getImageUrl() {
-        return ImageUrl;
+        return image_url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        ImageUrl = imageUrl;
+    public void setImageUrl(String image_url) {
+        this.image_url = image_url;
     }
 
-    public Users(String imageUrl) {
-        ImageUrl = imageUrl;
+    public Users(String image_url) {
+        this.image_url = image_url;
     }
     public String getName() {
         return name;
@@ -35,13 +35,7 @@ public class Users {
         this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 
     public String getMail() {
         return mail;
@@ -83,15 +77,15 @@ public class Users {
         this.city = city;
     }
 
-    public Users(String name, String lastname, String mail, String password, String phone, String address, String city, String ImageUrl) {
+    public Users(String address, String city, String image_url, String mail, String name, String password, String phone) {
         this.name = name;
-        this.lastname = lastname;
+        //this.lastname = lastname;
         this.mail = mail;
         this.password = password;
         this.phone = phone;
         this.address = address;
         this.city = city;
-        this.ImageUrl = ImageUrl;
+        this.image_url = image_url;
     }
 
 }

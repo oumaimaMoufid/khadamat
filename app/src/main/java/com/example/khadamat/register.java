@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -63,6 +64,7 @@ public class register extends AppCompatActivity {
     //////////////
     private Button registerButton;
     private EditText  InputName,InputLastName,InputMail,InputPassword,InputPhone,InputAdr,InputCity;
+    private ImageView ImageURL;
     private RadioButton genderMale,genderFemale;
     private ProgressDialog loadingBar;
     //  private FirebaseAuth mAuth,mAuthListener;
@@ -105,6 +107,7 @@ public class register extends AppCompatActivity {
           InputPhone = (EditText) findViewById(R.id.tel);
           InputAdr = (EditText) findViewById(R.id.adresse);
           InputCity = (EditText) findViewById(R.id.city);
+          //ImageURL=(ImageView)=findViewById(R.id)
           loadingBar = new ProgressDialog(this);
 
           //user = new users();
@@ -137,7 +140,10 @@ public class register extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
             mImageUri = data.getData();
-            Picasso.with(this).load(mImageUri).into(mImageView);
+            Picasso.get().load(mImageUri).into(mImageView);
+            //Picasso.with(this).load(mImageUri).into(mImageView);
+            // Picasso.get().load(model.getImage_url()).into(holder.imageView);
+
             //mImageView.setImageURI(mImageUri);
         }
     }
@@ -186,6 +192,7 @@ public class register extends AppCompatActivity {
                                         HashMap<String, Object> users = new HashMap<>();
                                         users.put("image_url", downloadUri.toString());
                                         mDatabaseRef.child(phone).updateChildren(users);
+
                                     }
                                 }
                             });
@@ -229,6 +236,7 @@ public class register extends AppCompatActivity {
         String phone=InputPhone.getText().toString();
         String address=InputAdr.getText().toString();
         String city=InputCity.getText().toString();
+      //  String imageUrl=ImageURL.getText().toString();
 
         if(name.isEmpty())
         {
