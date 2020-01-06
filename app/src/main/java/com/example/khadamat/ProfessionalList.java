@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.khadamat.Model.Users;
@@ -17,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Recycler extends AppCompatActivity {
+public class ProfessionalList extends AppCompatActivity {
 
     DatabaseReference reference;
     RecyclerView recyclerView;
@@ -40,20 +39,22 @@ public class Recycler extends AppCompatActivity {
               public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                   for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                   {
-                      Users u = dataSnapshot1.getValue(Users.class);
-                      u.setImageUrl(dataSnapshot1.child("image_url").getValue(String.class));
-                      list.add(u);
-                      Toast.makeText(Recycler.this, "imagel 1 "+u.getImageUrl(), Toast.LENGTH_LONG).show();
+                      if (dataSnapshot1.child("categorie").exists()){
+                          Users u = dataSnapshot1.getValue(Users.class);
+                          u.setImageUrl(dataSnapshot1.child("image_url").getValue(String.class));
+                          list.add(u);
+                          Toast.makeText(ProfessionalList.this, "imagel 1 "+u.getImageUrl(), Toast.LENGTH_LONG).show();
 
+                      }
                   }
-                  adapter = new MyAdapter(Recycler.this,list);
+                  adapter = new MyAdapter(ProfessionalList.this,list);
                   recyclerView.setAdapter(adapter);
               }
 
 
               @Override
               public void onCancelled(@NonNull DatabaseError databaseError) {
-                  Toast.makeText(Recycler.this, "opps something is wrong", Toast.LENGTH_SHORT).show();
+                  Toast.makeText(ProfessionalList.this, "opps something is wrong", Toast.LENGTH_SHORT).show();
               }
           });
 

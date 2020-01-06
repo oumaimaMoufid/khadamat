@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Recycler" />
+        <activity android:name=".ListPostes"></activity>
+        <activity android:name=".AjouterPoste" />
+        <activity android:name=".Detail" />
+        <activity android:name=".ProfessionalList" />
         <activity
             android:name=".HomeServiceActivity"
             android:label="@string/title_activity_home_service"

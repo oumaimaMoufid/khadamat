@@ -23,6 +23,7 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
       Context context;
       ArrayList<Users> users;
 
+
       public MyAdapter(Context c, ArrayList<Users> u){
 
           context = c;
@@ -37,23 +38,21 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
           holder.name.setText(users.get(position).getName());
           holder.phone.setText(users.get(position).getPhone());
           Picasso.get().load(users.get(position).getImageUrl()).into(holder.user_image);
 
-
-
-       // Toast.makeText(context, "image"+users.get(position).getImageUrl(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, "image"+users.get(position).getImageUrl(), Toast.LENGTH_LONG).show();
           //  Log.v("image",users.get(position).getImageUrl());
-
+//
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
-//                intent.putExtra("pid", model.getPid());
-//                startActivity(intent);
+//                Intent intent = new Intent(MyAdapter.this, Detail.class);
+//                intent.putExtra("phone", users.get(position).getPhone());
+//                context.startActivity(intent);
 //            }
 //        });
     }
@@ -63,23 +62,29 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return users.size() ;
     }
 
-    class  MyViewHolder extends RecyclerView.ViewHolder {
+    class  MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView name,phone;
         ImageView user_image;
         Button detail;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.user_name);
-            phone = (TextView) itemView.findViewById(R.id.user_phone);
-            detail = (Button) itemView.findViewById(R.id.detail);
-            user_image = (ImageView) itemView.findViewById(R.id.user_image);
+            name = itemView.findViewById(R.id.user_name);
+            phone = itemView.findViewById(R.id.user_phone);
+            detail = itemView.findViewById(R.id.detail);
+            user_image = itemView.findViewById(R.id.user_image);
 
-
-
-
-
+            detail.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            if (view.getId() == R.id.detail){
+                //String userPhone = phone.toString();
+                Intent intent = new Intent(context, Detail.class);
+                intent.putExtra("num",phone.getText().toString());
+                context.startActivity(intent);
+            }
+        }
     }
 }

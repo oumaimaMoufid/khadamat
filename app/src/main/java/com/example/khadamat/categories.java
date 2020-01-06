@@ -26,10 +26,25 @@ public class categories extends AppCompatActivity {
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(categories.this, Recycler.class);
+                Intent intent = new Intent(categories.this, ProfessionalList.class);
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.addPost).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(categories.this, AjouterPoste.class));
+            }
+        });
+
+        findViewById(R.id.showPostes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(categories.this, ListPostes.class));
+            }
+        });
+
 
         professional.setOnClickListener(new View.OnClickListener() {
             @Override

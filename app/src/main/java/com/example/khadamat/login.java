@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.khadamat.Model.Users;
 import com.example.khadamat.prevalent.Prevalent;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,10 +30,6 @@ public class login extends AppCompatActivity {
     private String parentDbName = "Users";
 
     private TextView AdminLink,NotAdminLink;
-
-
-
-
 
 
 
@@ -79,6 +76,13 @@ public class login extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+            startActivity(new Intent(this, categories.class));
+        }
+    }
 
     private void LoginUser(){
 
