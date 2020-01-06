@@ -41,10 +41,23 @@ public class ProfessionalList extends AppCompatActivity {
                   {
                       if (dataSnapshot1.child("categorie").exists()){
                           Users u = dataSnapshot1.getValue(Users.class);
-                          u.setImageUrl(dataSnapshot1.child("image_url").getValue(String.class));
-                          list.add(u);
-                          Toast.makeText(ProfessionalList.this, "imagel 1 "+u.getImageUrl(), Toast.LENGTH_LONG).show();
+                         // u.setImageUrl(dataSnapshot1.child("image_url").getValue(String.class));
 
+                          if (u.getCategorie().equals("Home Services")){
+                              u.setImageUrl(dataSnapshot1.child("image_url").getValue(String.class));
+
+                              list.add(u);
+                              Toast.makeText(ProfessionalList.this, "imagel 1 "+u.getImageUrl(), Toast.LENGTH_LONG).show();
+                          }else{
+                              Toast.makeText(ProfessionalList.this, " the list of professional  is empty", Toast.LENGTH_LONG).show();
+
+                          }
+                         // list.add(u);
+                         // Toast.makeText(ProfessionalList.this, "imagel 1 "+u.getImageUrl(), Toast.LENGTH_LONG).show();
+
+                      }
+                      else{
+                          Toast.makeText(ProfessionalList.this, "Category not found ", Toast.LENGTH_LONG).show();
                       }
                   }
                   adapter = new MyAdapter(ProfessionalList.this,list);

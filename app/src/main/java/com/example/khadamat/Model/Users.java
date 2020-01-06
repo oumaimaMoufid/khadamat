@@ -10,10 +10,37 @@ public class Users {
     private String address;
     private String city;
     private String image_url;
-
+    private String categorie;
 
     public Users(){
 
+    }
+
+    public Users(String name, String mail, String password, String phone, String address, String city, String image_url, String categorie) {
+        this.name = name;
+        this.mail = mail;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.image_url = image_url;
+        this.categorie = categorie;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
     public String getImageUrl() {
