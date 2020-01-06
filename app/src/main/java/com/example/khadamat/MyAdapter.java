@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,8 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
           holder.phone.setText(users.get(position).getPhone());
           Picasso.get().load(users.get(position).getImageUrl()).into(holder.user_image);
 
+
+
        // Toast.makeText(context, "image"+users.get(position).getImageUrl(), Toast.LENGTH_LONG).show();
           //  Log.v("image",users.get(position).getImageUrl());
 
@@ -63,16 +66,20 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     class  MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,phone;
         ImageView user_image;
+        Button detail;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.user_name);
             phone = (TextView) itemView.findViewById(R.id.user_phone);
+            detail = (Button) itemView.findViewById(R.id.detail);
             user_image = (ImageView) itemView.findViewById(R.id.user_image);
 
 
 
 
+
         }
+
     }
 }

@@ -25,7 +25,6 @@
             android:name=".AdminHome"
             android:label="@string/title_activity_admin_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".hello" />
         <activity android:name=".profile" />
         <activity android:name=".home" />
         <activity android:name=".categories" />

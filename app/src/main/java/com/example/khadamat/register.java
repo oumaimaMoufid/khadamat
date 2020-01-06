@@ -82,7 +82,7 @@ public class register extends AppCompatActivity {
         ////select + uploadpic
 
         mButtonChooseImage = findViewById(R.id.btn_choose_image);
-        mButtonUpload = findViewById(R.id.btn_upload);
+
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
       //Users == uploads
@@ -101,7 +101,7 @@ public class register extends AppCompatActivity {
           registerButton = (Button) findViewById(R.id.register);
 
           InputName = findViewById(R.id.userName);
-          InputLastName = (EditText) findViewById(R.id.userLastName);
+          //InputLastName = (EditText) findViewById(R.id.userLastName);
           InputMail = (EditText) findViewById(R.id.usermail);
           InputPassword = (EditText) findViewById(R.id.password);
           InputPhone = (EditText) findViewById(R.id.tel);
@@ -190,6 +190,7 @@ public class register extends AppCompatActivity {
                                         Toast.makeText(register.this, "uploas successful", Toast.LENGTH_SHORT).show();
 
                                         HashMap<String, Object> users = new HashMap<>();
+                                        //Amine picture
                                         users.put("image_url", downloadUri.toString());
                                         mDatabaseRef.child(phone).updateChildren(users);
 
@@ -230,7 +231,7 @@ public class register extends AppCompatActivity {
     private  void createAccount(){
 
         String name=InputName.getText().toString();
-        String lastname=InputLastName.getText().toString();
+        //String lastname=InputLastName.getText().toString();
         String mail=InputMail.getText().toString();
         String password=InputPassword.getText().toString();
         String phone=InputPhone.getText().toString();
@@ -242,10 +243,7 @@ public class register extends AppCompatActivity {
         {
             Toast.makeText(this, "please write your name", Toast.LENGTH_SHORT).show();
         }
-        else if(lastname.isEmpty())
-        {
-            Toast.makeText(this, "please write your last name", Toast.LENGTH_SHORT).show();
-        }
+
         else if(mail.isEmpty())
         {
             Toast.makeText(this, "please write your mail", Toast.LENGTH_SHORT).show();
@@ -272,7 +270,7 @@ public class register extends AppCompatActivity {
             loadingBar.setMessage("please wait, while we are checking the credentials.");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
-            ValidatephoneNumber(name,lastname,mail,password,phone,address,city);
+            ValidatephoneNumber(name,mail,password,phone,address,city);
 
 
 
@@ -286,7 +284,7 @@ public class register extends AppCompatActivity {
 
 
 
-    private void ValidatephoneNumber(final String name, final String lastname, final String mail, final String password, final String phone, final String address, final String city)
+    private void ValidatephoneNumber(final String name,final String mail, final String password, final String phone, final String address, final String city)
     {
 
 
@@ -306,7 +304,6 @@ public class register extends AppCompatActivity {
                     Toast.makeText(register.this, "3", Toast.LENGTH_SHORT).show();
                     HashMap<String,Object> userdataMap = new HashMap<>();
                     userdataMap.put("name",name);
-                    userdataMap.put("last name",lastname);
                     userdataMap.put("mail",mail);
                     userdataMap.put("password",password);
                     userdataMap.put("phone",phone);

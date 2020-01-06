@@ -1,6 +1,7 @@
 package com.example.khadamat;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 public class profile extends AppCompatActivity {
 
@@ -24,8 +28,6 @@ public class profile extends AppCompatActivity {
     private TextView emailText, telText, adrText, cityText;
 
     private ImageView userImageView, mailImageView, phoneImageView, adrImageView, cityImageView;
-
-    //private String phone, password;
 
     private FirebaseDatabase database;
     private DatabaseReference userRef;
@@ -42,6 +44,7 @@ public class profile extends AppCompatActivity {
       //  Intent intent = getIntent();
       //  phone = intent.getStringExtra("phone");
 
+
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -56,7 +59,7 @@ public class profile extends AppCompatActivity {
         adrText = findViewById(R.id.adr);
         cityText = findViewById(R.id.city);
 
-        userImageView = findViewById(R.id.image_view);
+        userImageView = findViewById(R.id.imageView);
         mailImageView = findViewById(R.id.emailImage);
         phoneImageView = findViewById(R.id.phoneImage);
         adrImageView = findViewById(R.id.adrImage);
@@ -80,6 +83,9 @@ public class profile extends AppCompatActivity {
                         telText.setText(Prevalent.currentOnlineUser.getPhone());
                         adrText.setText(Prevalent.currentOnlineUser.getAddress());
                         cityText.setText(Prevalent.currentOnlineUser.getCity());
+        //
+        //  userImageView.setImageURI(Uri.parse(Prevalent.currentOnlineUser.getImageUrl()));
+
 //                Users users=dataSnapshot.getValue(Users.class);
 //                nameText.setText(users.getName());
 //                lastnameText.setText(users.getLastname());
