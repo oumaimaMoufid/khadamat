@@ -4,6 +4,7 @@ public class Poste {
     private String Description;
     private String Phone;
 
+
     public Poste() {
     }
 

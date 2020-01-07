@@ -138,7 +138,7 @@ public class login extends AppCompatActivity {
                             else if(parentDbName.equals("Users")){
                                 Toast.makeText(login.this, "Logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent = new Intent(login.this,categories.class);
+                                Intent intent = new Intent(login.this,home.class);
                                 Prevalent.currentOnlineUser = usersDate;
                                 // intent.putExtra("phone", usersDate.getPhone());
                                 Log.v("phone: ",usersDate.getPhone());

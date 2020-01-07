@@ -11,6 +11,28 @@ public class Users {
     private String city;
     private String image_url;
     private String categorie;
+    private String description;
+
+    public Users(String name, String mail, String password, String phone, String address, String city, String image_url, String categorie, String description) {
+        this.name = name;
+        this.mail = mail;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.image_url = image_url;
+        this.categorie = categorie;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     public Users(){
 

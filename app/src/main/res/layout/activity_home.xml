@@ -20,8 +20,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/textGrid"
             android:textColor="@android:color/white"
-            android:text="Home services"
-            android:textSize="37dp"
+            android:text="Welcome To Our Application"
+            android:textSize="30dp"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             />
@@ -29,12 +29,12 @@
             android:fontFamily="@font/roboto_bolditalic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find Professionals"
+            android:text="Khadamat"
             android:layout_below="@+id/textGrid"
             android:gravity="center"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:layout_marginStart="123dp"
+            android:textColor="@color/backgrou"
+            android:textSize="30dp"
+            android:layout_marginStart="150dp"
             />
     </RelativeLayout>
 
@@ -74,13 +74,13 @@
 
                 <ImageView
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/house2"
+                    android:src="@drawable/home1"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_width="67dp"
+                    android:layout_height="90dp" />
                 <TextView
                     android:layout_marginLeft="27dp"
-                    android:text="House Cleaning"
+                    android:text="Categories"
                     android:textColor="@android:color/black"
                     android:textSize="14dp"
                     android:textStyle="bold"
@@ -117,7 +117,7 @@
                     android:layout_height="100dp" />
                 <TextView
                     android:layout_marginLeft="27dp"
-                    android:text="Electrical Services"
+                    android:text="Professional"
                     android:textColor="@android:color/black"
                     android:textSize="14dp"
                     android:textStyle="bold"
@@ -151,18 +151,18 @@
 
                 <ImageView
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/pain2"
+                    android:src="@drawable/client"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_width="90dp"
+                    android:layout_height="90dp" />
                 <TextView
                     android:layout_marginLeft="27dp"
-                    android:text="Painting Services"
+                    android:text="Client Add Your Post"
                     android:textColor="@android:color/black"
                     android:textSize="14dp"
                     android:textStyle="bold"
                     android:textAlignment="center"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -190,13 +190,13 @@
 
                 <ImageView
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/ic_build_black_24dp"
+                    android:src="@drawable/add"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="80dp"
                     android:layout_height="100dp" />
                 <TextView
                     android:layout_marginLeft="27dp"
-                    android:text="Auto Services"
+                    android:text="Postes"
                     android:textColor="@android:color/black"
                     android:textSize="14dp"
                     android:textStyle="bold"
@@ -228,13 +228,13 @@
 
                 <ImageView
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/plumbing"
+                    android:src="@drawable/profile"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="80dp"
                     android:layout_height="80dp" />
                 <TextView
-                    android:layout_marginLeft="27dp"
-                    android:text="Plumbing Services"
+                    android:layout_marginLeft="40dp"
+                    android:text="Profile"
                     android:textColor="@android:color/black"
                     android:textSize="13dp"
                     android:textStyle="bold"
@@ -264,17 +264,16 @@
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/ic_home_black_24dp"
+                    android:src="@drawable/logout"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="80dp"
                     android:layout_height="80dp" />
                 <TextView
-                    android:layout_marginLeft="27dp"
-                    android:text="Home"
+                    android:text="LOGOUT"
                     android:textColor="@android:color/black"
                     android:textSize="14dp"
                     android:textStyle="bold"
-                    android:layout_marginStart="43dp"
+                    android:layout_marginStart="35dp"
                     android:textAlignment="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

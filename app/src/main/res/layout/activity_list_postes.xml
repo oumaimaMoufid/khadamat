@@ -7,6 +7,7 @@
     tools:context=".ListPostes">
 
     <android.support.v7.widget.RecyclerView
+        android:background="#B2CEF5"
         android:id="@+id/rc2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

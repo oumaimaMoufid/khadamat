@@ -41,14 +41,16 @@
             />
         <Button
             android:id="@+id/detail"
+            android:background="@color/backgrou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="More Details!"
+            android:textStyle="bold"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:textSize="16sp"
             android:layout_below="@+id/user_phone"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#ffffff"
             />
     </RelativeLayout>
 

@@ -50,7 +50,7 @@ public class Detail extends AppCompatActivity {
 
 
       //  getIntent().getStringExtra("pid");
-        Log.v("num",userPhone);
+        //Log.v("num",userPhone);
 //**************************************************************************************************
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference userRef = rootRef.child(USERS+"/"+userPhone);
@@ -79,6 +79,7 @@ public class Detail extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     Users u = dataSnapshot.getValue(Users.class);
                     nameText.setText(u.getName());
+                    professionalText.setText(u.getDescription());
                     emailText.setText(u.getMail());
                     telText.setText(u.getPhone());
                     adrText.setText(u.getAddress());

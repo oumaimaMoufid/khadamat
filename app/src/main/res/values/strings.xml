@@ -12,6 +12,7 @@
     <string name="name">Name : </string>
     <string name="phone">Phone : </string>
 
+
     <string name="country_prompt">Choose a Categories</string>
     <string-array name="country_arrays">
 
@@ -21,4 +22,7 @@
 
     </string-array>
     <string name="title_activity_home_service">HomeServiceActivity</string>
+
+    <string name="prof2">Choose your categorie and add a description about yourself and your salary range for a day or a month
+        to help the client . THANK YOU!  </string>
 </resources>

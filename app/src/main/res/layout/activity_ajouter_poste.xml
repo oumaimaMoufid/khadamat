@@ -8,16 +8,29 @@
     tools:context=".AjouterPoste">
 
     <EditText
+
+        android:layout_marginTop="200dp"
         android:id="@+id/description"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
+        android:hint="add a post "
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/edittext_bg"
         android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/ajouterPoste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ajouter "
+        android:text="Add "
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:background="@drawable/buttons"
         android:layout_marginBottom="10dp"/>
 
 

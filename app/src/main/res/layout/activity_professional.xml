@@ -6,16 +6,36 @@
     android:layout_height="match_parent"
         tools:context=".Professional">
 
+    <TextView
+        android:layout_marginTop="100dp"
+        android:id="@+id/profesId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/roboto_bolditalic"
+        android:text="Are you a professional ? Please complete your information"
+        android:textColor="#FF9800"
+        android:textSize="20dp" />
+    <TextView
+        android:background="@drawable/cercleprofile"
+        android:layout_marginTop="180dp"
+        android:id="@+id/profes2"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/prof2"
+        android:textColor="#000000"
+        android:textSize="16dp" />
+
 
     <LinearLayout
-
-        android:layout_width="190dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginStart="60dp"
         >
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_height="wrap_content"
@@ -27,7 +47,7 @@
                 android:entries="@array/country_arrays"
                 android:prompt="@string/country_prompt"
                 android:layout_height="wrap_content"
-                android:layout_width="190dp"
+                android:layout_width="wrap_content"
                 android:padding="20dp"
 
                 />
@@ -74,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/salary"
-            android:text="Update "
+            android:text="Update"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
             android:layout_marginTop="20dp"

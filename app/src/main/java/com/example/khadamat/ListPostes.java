@@ -41,6 +41,8 @@ public class ListPostes extends AppCompatActivity {
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                             Poste u = dataSnapshot1.getValue(Poste.class);
                             u.setDescription(dataSnapshot1.child("description").getValue(String.class));
+                            u.setPhone(dataSnapshot1.child("phone").getValue(String.class));
+
                             Log.v("hlkjlk", u.getDescription());
                             list.add(u);
                         }

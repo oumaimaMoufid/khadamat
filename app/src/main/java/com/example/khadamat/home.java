@@ -60,7 +60,7 @@ public class home extends AppCompatActivity {
                     if (finalI == 0)//Vetements
                     {
                         String nom= "Vetements";
-                        Intent intent = new Intent(home.this, profile.class);
+                        Intent intent = new Intent(home.this, categories.class);
                         Bundle b = new Bundle();
                         b.putString("produit", nom);
                         intent.putExtras(b);
@@ -70,7 +70,7 @@ public class home extends AppCompatActivity {
                     {
 
                         String nom= "Accessoires";
-                        Intent intent = new Intent(home.this, categories.class);
+                        Intent intent = new Intent(home.this, Professional.class);
                         Bundle b = new Bundle();
                         b.putString("produit", nom);
                         intent.putExtras(b);
@@ -80,7 +80,7 @@ public class home extends AppCompatActivity {
                     {
 
                         String nom= "Maquillage";
-                        Intent intent = new Intent(home.this, categories.class);
+                        Intent intent = new Intent(home.this, AjouterPoste.class);
                         Bundle b = new Bundle();
                         b.putString("produit", nom);
                         intent.putExtras(b);
@@ -89,7 +89,7 @@ public class home extends AppCompatActivity {
                     } else if (finalI == 3)//Produits
                     {
                         String nom= "Produits";
-                        Intent intent = new Intent(home.this, categories.class);
+                        Intent intent = new Intent(home.this, ListPostes.class);
                         Bundle b = new Bundle();
                         b.putString("produit", nom);
                         intent.putExtras(b);
@@ -98,7 +98,7 @@ public class home extends AppCompatActivity {
                     } else if (finalI == 4)//Chaussures
                     {
                         String nom= "Chaussures";
-                        Intent intent = new Intent(home.this, categories.class);
+                        Intent intent = new Intent(home.this, profile.class);
                         Bundle b = new Bundle();
                         b.putString("produit", nom);
                         intent.putExtras(b);

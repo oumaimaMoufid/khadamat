@@ -56,7 +56,7 @@ public class profile extends AppCompatActivity {
         //Log.v("Users", userRef.getKey());
 
         nameText = findViewById(R.id.name);
-        lastnameText = findViewById(R.id.lastname);
+       // lastnameText = findViewById(R.id.lastname);
         emailText = findViewById(R.id.email);
         telText = findViewById(R.id.tel);
         adrText = findViewById(R.id.adr);
@@ -75,10 +75,10 @@ public class profile extends AppCompatActivity {
 
 //        database = FirebaseDatabase.getInstance();
 //        userRef = database.getReference(USERS);
-        Toast.makeText(this, "11111111111111111", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "11111111111111111", Toast.LENGTH_SHORT).show();
 
-                        Log.v( "4444444444444",Prevalent.currentOnlineUser.getCity() );
-                        Toast.makeText(profile.this, "333333333333333333", Toast.LENGTH_SHORT).show();
+                       // Log.v( "4444444444444",Prevalent.currentOnlineUser.getCity() );
+                       // Toast.makeText(profile.this, "333333333333333333", Toast.LENGTH_SHORT).show();
                         //Users users = ds.child("Users").child(Prevalent.currentOnlineUser.getPhone()).getValue(Users.class);
                         nameText.setText(Prevalent.currentOnlineUser.getName());
                         //lastnameText.setText(Prevalent.currentOnlineUser.getLastname());
